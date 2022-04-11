@@ -1,0 +1,119 @@
+﻿@model ProyectoFinalResidencia.Models.Adolecentes
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Adolecentes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input asp-for="Edad" class="form-control" />
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dni" class="control-label"></label>
+                <input asp-for="Dni" class="form-control" />
+                <span asp-validation-for="Dni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genero" class="control-label"></label>
+                <input asp-for="Genero" class="form-control" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaNacimiento" class="control-label"></label>
+                <input asp-for="fechaNacimiento" class="form-control" />
+                <span asp-validation-for="fechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LugarNacimiento" class="control-label"></label>
+                <input asp-for="LugarNacimiento" class="form-control" />
+                <span asp-validation-for="LugarNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nacionalidad" class="control-label"></label>
+                <input asp-for="Nacionalidad" class="form-control" />
+                <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uder" class="control-label"></label>
+                <input asp-for="Uder" class="form-control" />
+                <span asp-validation-for="Uder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jusgado" class="control-label"></label>
+                <input asp-for="Jusgado" class="form-control" />
+                <span asp-validation-for="Jusgado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Escuela" class="control-label"></label>
+                <input asp-for="Escuela" class="form-control" />
+                <span asp-validation-for="Escuela" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nivel" class="control-label"></label>
+                <input asp-for="Nivel" class="form-control" />
+                <span asp-validation-for="Nivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Curso" class="control-label"></label>
+                <input asp-for="Curso" class="form-control" />
+                <span asp-validation-for="Curso" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TratamientoMedico" /> @Html.DisplayNameFor(model => model.TratamientoMedico)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TratamientoPsicologico" /> @Html.DisplayNameFor(model => model.TratamientoPsicologico)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Medicamento" /> @Html.DisplayNameFor(model => model.Medicamento)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReevinculacionesFamiliares" class="control-label"></label>
+                <input asp-for="ReevinculacionesFamiliares" class="form-control" />
+                <span asp-validation-for="ReevinculacionesFamiliares" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="familiaId" class="control-label">Familias</label>
+                <select asp-for="familiaId" class="form-control" asp-items="ViewBag.familiaId"></select>
+                <span asp-validation-for="familiaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
